@@ -2,26 +2,24 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
+const horn = document.querySelector("select");
+const volume = document.getElementById('volume');
+const button = document.getElementsByTagName('button')[0];
+  
+const confetti = new JSConfetti();
+
+const volMute = 'assets/icons/volume-level-0.svg';
+const volLow = 'assets/icons/volume-level-1.svg'; 
+const volMed = 'assets/icons/volume-level-2.svg';
+const volHigh = 'assets/icons/volume-level-3.svg';
+
 function init() {
-  
-  //variables
-  const horn = document.querySelector("select");
-  const volume = document.getElementById('volume');
-  const button = document.getElementsByTagName('button')[0];
-  
-  const confetti = new JSConfetti();
-  
-  const volMute = 'assets/icons/volume-level-0.svg';
-  const volLow = 'assets/icons/volume-level-1.svg'; 
-  const volMed = 'assets/icons/volume-level-2.svg';
-  const volHigh = 'assets/icons/volume-level-3.svg';
-  
+
   horn.addEventListener('change', (event) => {
-    const value = event.target.value;
-    const img = document.getElementsByTagName('img')[0];
-    img.src = `assets/images/${value}.svg`;
+    const image = document.getElementsByTagName('img')[0];
+    image.src = `assets/images/${event.target.value}.svg`;
     const audio = document.getElementsByClassName('hidden')[0];
-    audio.src = `assets/audio/${value}.mp3`;
+    audio.src = `assets/audio/${event.target.value}.mp3`;
   })
   
   volume.addEventListener('change', (event) => {
