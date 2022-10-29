@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
   
   //variables
-  const horn = document.getElementById('horn-select');
+  const horn = document.querySelector("select");
   const volume = document.getElementById('volume');
   const button = document.getElementsByTagName('button')[0];
   
@@ -17,11 +17,11 @@ function init() {
   const volHigh = 'assets/icons/volume-level-3.svg';
   
   horn.addEventListener('change', (event) => {
-    const select = event.target.value;
-    const img = document.getElementsByTagName('select')[0];
-    img.src = `assets/images/${select}.svg`;
+    const value = event.target.value;
+    const img = document.getElementsByTagName('img')[0];
+    img.src = `assets/images/${value}.svg`;
     const audio = document.getElementsByClassName('hidden')[0];
-    audio.src = `assets/audio/${select}.mp3`;
+    audio.src = `assets/audio/${value}.mp3`;
   })
   
   volume.addEventListener('change', (event) => {
