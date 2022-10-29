@@ -18,14 +18,14 @@ function init() {
   
   horn.addEventListener('change', (event) => {
     const select = event.target.value;
-    const img = document.getElementsByTagName('img')[0];
+    const img = document.getElementsByTagName('option')[0];
     img.src = `assets/images/${select}.svg`;
     const audio = document.getElementsByClassName('hidden')[0];
     audio.src = `assets/audio/${select}.mp3`;
   })
   
   volume.addEventListener('change', (event) => {
-    const img = document.getElementsByTagName('img')[1];
+    const img = document.getElementsByTagName('option')[1];
     const audio = document.getElementsByClassName('hidden');
     const vol = event.target.value;
     if(vol == 0){
