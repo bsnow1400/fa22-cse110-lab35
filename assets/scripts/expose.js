@@ -11,7 +11,7 @@ const volHigh = 'assets/icons/volume-level-3.svg';
 
 function init() {
   
-  const horn = document.getElementById('horn-select');
+  const horn = document.querySelector("select");
   const volume = document.getElementById('volume');
   const button = document.getElementsByTagName('button')[0];
 
