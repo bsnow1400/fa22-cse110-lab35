@@ -43,5 +43,5 @@ function init() {
     if(horn.value == 'party-horn'){
       jsConfetti.addConfetti();
     }
-  }
+  })
 }
