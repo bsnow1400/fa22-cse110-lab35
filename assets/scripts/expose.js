@@ -28,7 +28,7 @@ function init() {
     const slider = event.target.value;
     audio.volume = slider/100;
     if(slider == 0){
-      img.source = volMute;
+      img.source = 'assets/icons/volume-level-0.svg';
     } else if(slider > 0 && vol < 33){
       img.source = volLow;
     } else if(slider >= 33 && vol < 67){
