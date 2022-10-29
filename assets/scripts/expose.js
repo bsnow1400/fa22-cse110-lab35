@@ -23,18 +23,18 @@ function init() {
   })
   
   volume.addEventListener('change', (event) => {
-    const img = document.getElementsByTagName('select')[1];
     const audio = document.getElementsByClassName('hidden')[0];
     const slider = event.target.value;
+    const img = document.getElementsByTagName('select')[1];
     audio.volume = slider/100;
     if(slider == 0){
-      img.source = 'assets/icons/volume-level-0.svg';
+      img.source = 'assets/icons/volume-level-0.svg'
     } else if(slider > 0 && vol < 33){
-      img.source = volLow;
+      img.source = 'assets/icons/volume-level-1.svg'
     } else if(slider >= 33 && vol < 67){
-      img.source = volMed;
+      img.source = 'assets/icons/volume-level-2.svg'
     } else{
-      img.source = volHigh;
+      img.source = 'assets/icons/volume-level-3.svg'
     }
   })
   
