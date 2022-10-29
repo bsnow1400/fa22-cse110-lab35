@@ -24,13 +24,14 @@ function init() {
   
   volume.addEventListener('change', (event) => {
     const img = document.getElementsByTagName('select')[1];
-    const audio = document.getElementsByClassName('hidden');
-    const vol = event.target.value;
-    if(vol == 0){
+    const audio = document.getElementsByClassName('hidden')[0];
+    const slider = event.target.value;
+    audio.volume = slider/100;
+    if(slider == 0){
       img.source = volMute;
-    } else if(vol > 0 && vol < 33){
+    } else if(slider > 0 && vol < 33){
       img.source = volLow;
-    } else if(vol >= 33 && vol < 67){
+    } else if(slider >= 33 && vol < 67){
       img.source = volMed;
     } else{
       img.source = volHigh;
