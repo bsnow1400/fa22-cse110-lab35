@@ -23,19 +23,19 @@ function init() {
   })
   
   volume.addEventListener('change', (event) => {
-    const audio = document.getElementsByClassName('hidden')[0];
-    const slider = event.target.value;
-    const img = document.getElementsByTagName('select')[1];
-    audio.volume = slider/100;
-    if(slider == 0){
-      img.source = 'assets/icons/volume-level-0.svg'
-    } else if(slider > 0 && vol < 33){
-      img.source = 'assets/icons/volume-level-1.svg'
-    } else if(slider >= 33 && vol < 67){
-      img.source = 'assets/icons/volume-level-2.svg'
+    const vol = event.target.value;
+    const image = document.getElementsByTagName('img')[1];
+    if(vol == 0){
+      image.src = 'assets/icons/volume-level-0.svg'
+    } else if(vol > 0 && vol < 33){
+      image.src = 'assets/icons/volume-level-1.svg'
+    } else if(vol >= 33 && vol < 67){
+      image.src = 'assets/icons/volume-level-2.svg'
     } else{
-      img.source = 'assets/icons/volume-level-3.svg'
+      image.src = 'assets/icons/volume-level-3.svg'
     }
+    const audio = document.getElementsByClassName('hidden')[0];
+    audio.volume = vol/100;
   })
   
   button.addEventListener('change', (event) => {
