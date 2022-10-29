@@ -1,10 +1,6 @@
 // expose.js
 
 window.addEventListener('DOMContentLoaded', init);
-
-const horn = document.querySelector("select");
-const volume = document.getElementById('volume');
-const button = document.getElementsByTagName('button')[0];
   
 const confetti = new JSConfetti();
 
@@ -14,6 +10,10 @@ const volMed = 'assets/icons/volume-level-2.svg';
 const volHigh = 'assets/icons/volume-level-3.svg';
 
 function init() {
+  
+  const horn = document.getElementById('horn-select');
+  const volume = document.getElementById('volume');
+  const button = document.getElementsByTagName('button')[0];
 
   horn.addEventListener('change', (event) => {
     const image = document.getElementsByTagName('img')[0];
