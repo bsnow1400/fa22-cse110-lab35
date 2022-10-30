@@ -4,11 +4,11 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-  const synth = window.speechSynthesis;
   const voiceSelect = document.getElementById("voice-select");
 
-  function populateVoiceList() 
-  {
+  voiceSelect.addEventListener('load', (event) => {
+    
+    const synth = window.speechSynthesis;
     voices = synth.getVoices();
   
     for (let i = 0; i < voices.length ; i++) 
@@ -26,13 +26,7 @@ function init() {
       voiceSelect.appendChild(option);
     }
   }
-  
-  populateVoiceList();
-
-  if (speechSynthesis.onvoiceschanged !== undefined) 
-  {
-    speechSynthesis.onvoiceschanged = populateVoiceList;
-  }
+  )
   
 }
 
