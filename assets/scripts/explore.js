@@ -58,8 +58,7 @@ function init() {
         utterThis.voice = voices[j];
       }
     } 
-    utterThis.pitch = pitch.value;
-    utterThis.rate = rate.value;
+    
     window.speechSynthesis.speak(utterThis);
   })
   
