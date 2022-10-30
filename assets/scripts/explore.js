@@ -45,7 +45,7 @@ function init() {
   }
 
   // not working for some reason, commented out until i figure it out
-  
+  /*
   speak.addEventListener("click", (event) => {
     // utterThis.text = inputText.getAttribute("placeholder");
     utterThis.text = inputText.value;
@@ -58,9 +58,10 @@ function init() {
         utterThis.voice = voices[j];
       }
     } 
-    
+
     window.speechSynthesis.speak(utterThis);
   })
+  */
   
 }
 
