@@ -4,11 +4,9 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-  const voiceSelect = document.getElementById("voice-select");
-
-  voiceSelect.addEventListener('load', (event) => {
+  synth.addEventListener('load', (event) => {
     
-    const synth = window.speechSynthesis;
+    const voiceSelect = document.getElementById("voice-select");
     voices = synth.getVoices();
   
     for (let i = 0; i < voices.length ; i++) 
