@@ -5,14 +5,14 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
 
   synth.addEventListener('load', (event) => {
-    
+
     const voiceSelect = document.getElementById("voice-select");
     voices = synth.getVoices();
   
     for (let i = 0; i < voices.length ; i++) 
     {
       const option = document.createElement('option');
-      option.textContent = `${voices[i].name} (${voices[i].lang})`;
+      option.value = `${voices[i].name} (${voices[i].lang})`;
   
       if (voices[i].default) 
       {
