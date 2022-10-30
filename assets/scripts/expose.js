@@ -34,10 +34,10 @@ function init() {
   })
 
   button.addEventListener('click', (event) => {
-    const audio = document.getElementsByClassName('hidden')[0];
-    audio.play();
     if(horn.value == 'party-horn'){
       confetti.addConfetti();
     }
+    const audio = document.getElementsByClassName('hidden')[0];
+    audio.play();
   })
 }
