@@ -14,7 +14,7 @@ function init() {
   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
   }
   */
-
+  
   let voices = [];
   let inputText = document.getElementById("text-to-speech");
   let voiceSelect = document.getElementById("voice-select");
@@ -39,11 +39,11 @@ function init() {
     voiceSelect.options.appendChild(option);
     
   }
-
+  /*
   speak.addEventListener('click', (event) => 
   {
     event.preventDefault();
-    
+
     let utterThis = new SpeechSynthesisUtterance(inputText.getAttribute("placeholder"));
     let selectedOption = voiceSelect.selectedOptions[0].getAttribute('name');
 
@@ -57,9 +57,6 @@ function init() {
 
     synth.speak(utterThis);
   }
-  )
-
-  
-  
+  */
 }
 
