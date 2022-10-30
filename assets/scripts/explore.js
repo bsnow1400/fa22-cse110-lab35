@@ -24,16 +24,17 @@ function init() {
     let option = document.createElement('option');
     option.value = `${voices[i].name} (${voices[i].lang})`;
   
+    /*
     if (voices[i].default) 
     {
-      option.textContent += ' — DEFAULT';
+      option.value += ' — DEFAULT';
     }
 
-    /*
     option.setAttribute('data-lang', voices[i].lang);
     option.setAttribute('data-name', voices[i].name);
     */
-    voiceSelect.appendChild(option);
+   
+    voiceSelect.options.appendChild(option);
     
   }
   
