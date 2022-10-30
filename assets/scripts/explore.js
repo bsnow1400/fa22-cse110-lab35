@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
 
   const synth = window.speechSynthesis;
-  const voiceSelect = document.querySelector('select');
+  const voiceSelect = document.getElementById("voice-select");
 
   function populateVoiceList() 
   {
@@ -28,7 +28,7 @@ function init() {
   }
   
   populateVoiceList();
-  
+
   if (speechSynthesis.onvoiceschanged !== undefined) 
   {
     speechSynthesis.onvoiceschanged = populateVoiceList;
