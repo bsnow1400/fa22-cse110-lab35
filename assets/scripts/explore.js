@@ -4,12 +4,12 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-  
+  // SHIT JUST KEEPS RANDOMLY NOT WORKING EVEN WITH THE SAME CODE WHEN IT DOES WORK
+  let voices = [];
   window.speechSynthesis.onvoiceschanged = () => 
   {
     let voiceSelect = document.getElementById("voice-select");
     voices = window.speechSynthesis.getVoices();
-    console.log();
 
   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
   }
