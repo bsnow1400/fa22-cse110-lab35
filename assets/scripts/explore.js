@@ -5,14 +5,16 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
 
   const synth = window.speechSynthesis;
-  const voices = document.querySelector('select');
+  const voiceSelect = document.querySelector("select");
+
+  let voices = [];
 
   function buildVoices()
   {
-    let voices = synth.getVoices();
+    voices = synth.getVoices();
     for (let i = 0; i < voices.length; i++)
     {
-      const option = document.createElement('option');
+      const option = document.createElement("option");
       option.textContent = `${voices[i].name} (${voices[i].lang})`;
 
       if (voices[i].default)
