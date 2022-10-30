@@ -21,7 +21,7 @@ function init() {
   let inputText = document.querySelector("textarea");
   let voiceSelect = document.getElementById("voice-select");
   let speak = document.querySelector("button");
-  // let utterThis = new SpeechSynthesisUtterance();
+  let utterThis = new SpeechSynthesisUtterance();
 
   window.speechSynthesis.onvoiceschanged = () => 
   {
@@ -29,25 +29,22 @@ function init() {
 
     for (let i = 0; i < voices.length ; i++) 
     {
-      let option = document.createElement('option');
-      option.value = `${voices[i].name} (${voices[i].lang})`;
-  
+      const option = document.createElement('option');
+      option.textContent = `${voices[i].name} (${voices[i].lang})`;
+      
       if (voices[i].default) 
       {
-        option.value += ' — DEFAULT';
+        option.textContent += ' — DEFAULT';
       }
 
       option.setAttribute('lang', voices[i].lang);
       option.setAttribute('name', voices[i].name);
 
-      voiceSelect.options.appendChild(option); 
+      voiceSelect.appendChild(option); 
     }
   }
-
-  // not working for some reason, commented out until i figure it out
-  /*
+  
   speak.addEventListener("click", (event) => {
-    // utterThis.text = inputText.getAttribute("placeholder");
     utterThis.text = inputText.value;
     let selectedOption = voiceSelect.selectedOptions[0].getAttribute('name');
 
@@ -60,8 +57,8 @@ function init() {
     } 
 
     window.speechSynthesis.speak(utterThis);
-  })
-  */
+  }
+  )
   
 }
 
