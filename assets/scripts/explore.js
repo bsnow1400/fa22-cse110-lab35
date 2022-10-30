@@ -32,8 +32,9 @@ function init() {
     /*
     option.setAttribute('data-lang', voices[i].lang);
     option.setAttribute('data-name', voices[i].name);
-    voiceSelect.appendChild(option);
     */
+    voiceSelect.appendChild(option);
+    
   }
   
   
