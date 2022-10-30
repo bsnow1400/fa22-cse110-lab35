@@ -3,24 +3,12 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-
-  // SHIT JUST KEEPS RANDOMLY NOT WORKING EVEN WITH THE SAME CODE WHEN IT DOES WORK
-  /*
-  let voices = [];
-
-  window.speechSynthesis.onvoiceschanged = () => 
-  {
-    let voiceSelect = document.getElementById("voice-select");
-    voices = window.speechSynthesis.getVoices();
-
-  voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
-  }
-  */
   
   let voices = [];
   let inputText = document.querySelector("textarea");
   let voiceSelect = document.getElementById("voice-select");
   let speak = document.querySelector("button");
+  let face = document.getElementsByTagName('img')[0];
   let utterThis = new SpeechSynthesisUtterance();
 
   window.speechSynthesis.onvoiceschanged = () => 
@@ -43,6 +31,16 @@ function init() {
       voiceSelect.appendChild(option); 
     }
   }
+
+  utterThis.addEventListener('start', (event) => {
+    face.src = 'assets/images/smiling-open.png';
+  }
+  )
+
+  utterThis.addEventListener('end', (event) => {
+    face.src = 'assets/images/smiling.png';
+  }
+  )
   
   speak.addEventListener("click", (event) => {
     utterThis.text = inputText.value;
