@@ -4,8 +4,8 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-  const synth = window.speechSynthesis
-  const voices = document.querySelector("select");
+  const synth = window.speechSynthesis;
+  const voices = document.querySelector('select');
 
   function buildVoices()
   {
