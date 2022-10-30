@@ -7,6 +7,9 @@ const jsConfetti = new JSConfetti();
 function init() {
 
   const horn = document.querySelector('select');
+  const volume = document.getElementById('volume');
+  const button = document.getElementsByTagName('button')[0];
+  
   horn.addEventListener('change', (event) => {
     const image = document.getElementsByTagName('img')[0];
     image.src = `assets/images/${event.target.value}.svg`;
@@ -14,7 +17,6 @@ function init() {
     audio.src = `assets/audio/${event.target.value}.mp3`;
   })
 
-  const volume = document.getElementById('volume');
   volume.addEventListener('change', (event) => {
     const vol = event.target.value;
     const image = document.getElementsByTagName('img')[1];
@@ -31,7 +33,6 @@ function init() {
     audio.volume = vol/100;
   })
 
-  const button = document.getElementsByTagName('button')[0];
   button.addEventListener('click', (event) => {
     const getAudio = document.getElementsByClassName('hidden')[0];
     getAudio.play();
