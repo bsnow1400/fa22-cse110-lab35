@@ -21,7 +21,7 @@ function init() {
   let inputText = document.querySelector("textarea");
   let voiceSelect = document.getElementById("voice-select");
   let speak = document.querySelector("button");
-  let utterThis = new SpeechSynthesisUtterance();
+  // let utterThis = new SpeechSynthesisUtterance();
 
   window.speechSynthesis.onvoiceschanged = () => 
   {
