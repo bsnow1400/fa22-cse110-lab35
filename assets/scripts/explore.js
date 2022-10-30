@@ -12,6 +12,7 @@ function init() {
   function buildVoices()
   {
     voices = synth.getVoices();
+
     for (let i = 0; i < voices.length; i++)
     {
       const option = document.createElement("option");
@@ -24,7 +25,7 @@ function init() {
 
       option.setAttribute("data-lang", voices[i].lang);
       option.setAttribute("data-name", voices[i].name);
-      voices.appendChild(option);
+      voiceSelect.appendChild(option);
     }
   }
 
