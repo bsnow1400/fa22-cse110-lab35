@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-  /*
+  
   window.speechSynthesis.onvoiceschanged = () => 
   {
     let voiceSelect = document.getElementById("voice-select");
@@ -13,10 +13,10 @@ function init() {
 
   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
   }
-  */
   
+  /*
   let voices = [];
-  let inputText = document.getElementById("text-to-speech");
+  let inputText = document.querySelector("textarea");
   let voiceSelect = document.getElementById("voice-select");
   let speak = document.querySelector("button");
 
@@ -39,6 +39,9 @@ function init() {
     voiceSelect.options.appendChild(option);
     
   }
+  */
+
+  // not working for some reason, commented out until i figure it out
   /*
   speak.addEventListener('click', (event) => 
   {
